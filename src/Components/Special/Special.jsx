@@ -1,7 +1,5 @@
 import { CiShoppingCart } from "react-icons/ci";
 import { IoIosStar } from "react-icons/io";
-
-// Importing images from the assets folder inside src
 import special1 from '../../assets/special/special_1.png';
 import special2 from '../../assets/special/special_2.png';
 import special3 from '../../assets/special/special_3.png';
@@ -17,7 +15,7 @@ const Special = () => {
             image: special1,
             title: 'sandwich',
             description: 'bread with meat and vegetables',
-            price: '12 k',
+            price: '120 Rs',
             rating: '3.8'
         },
         {
@@ -25,7 +23,7 @@ const Special = () => {
             image: special2,
             title: 'hot milk',
             description: 'hot milk with less sugar',
-            price: '12 k',
+            price: '200 Rs',
             rating: '2.8'
         },
         {
@@ -33,7 +31,7 @@ const Special = () => {
             image: special3,
             title: 'coffee ice cream',
             description: 'coffee with ice cream vanilla',
-            price: '23 k',
+            price: '230 Rs',
             rating: '4.8'
         },
         {
@@ -41,7 +39,7 @@ const Special = () => {
             image: special4,
             title: 'cappuccino',
             description: 'hot cappuccino',
-            price: '12 k',
+            price: '120 Rs',
             rating: '3.8'
         },
         {
@@ -49,7 +47,7 @@ const Special = () => {
             image: special5,
             title: 'moccacinno',
             description: 'hot moccacinno',
-            price: '12 k',
+            price: '200 Rs',
             rating: '2.8'
         },
         {
@@ -57,7 +55,7 @@ const Special = () => {
             image: special6,
             title: 'waffle ice cream',
             description: 'waffle with ice cream',
-            price: '23 k',
+            price: '230 Rs',
             rating: '4.8'
         },
     ];

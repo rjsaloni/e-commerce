@@ -11,21 +11,21 @@ const Popular = () => {
             id: 1,
             image: popular1,
             title: 'vanilla latte',
-            price: '21 k',
+            price: '200 Rs',
             rating: '3.8'
         },
         {
             id: 2,
             image: popular2,
             title: 'espresso',
-            price: '12 k',
+            price: '100 Rs',
             rating: '2.8'
         },
         {
             id: 3,
             image: popular3,
             title: 'hazelnut latte',
-            price: '23 k',
+            price: '300 Rs',
             rating: '4.8'
         },
     ];
