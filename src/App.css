@@ -606,3 +606,161 @@ a.active {
 }
 
 /* subscribe component style end */
+
+.common_btn {
+  padding: 10px 20px;
+  background-color: #6f4e37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.15s ease-in-out;
+}
+
+.common_btn:hover {
+  background-color: #5c3f2e;
+}
+
+.common_btn:active {
+  transform: scale(0.96);
+}
+
+.transparent_btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #6f4e37;
+  border-radius: 8px;
+  color: #6f4e37;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.transparent_btn:hover {
+  background-color: #6f4e37;
+  color: white;
+}
+
+
+.product_card {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin: 0%;
+}
+
+.product_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product_image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.rating_badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.variant_btn {
+  background: #fff;
+  border: 1px solid #ff9f29;
+  color: #ff9f29;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.variant_btn:hover {
+  background: #ff9f29;
+  color: #fff;
+}
+
+.cart_btn {
+  background: #ff9f29;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.cart_btn:hover {
+  background: #e08819;
+}
+
+.product_card {
+  transition: all 0.3s ease;
+}
+.product_card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.rating_badge {
+  font-size: 0.85rem;
+}
+.variant_btn {
+  border-radius: 10px;
+}
+
+.order_page {
+  padding: 40px 0;
+}
+
+.section_header {
+  text-align: center;
+}
+
+.section_header h2 {
+  font-size: 2rem;
+}
+
+.product_card {
+  border: 1px solid #e4e4e4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product_image {
+  position: relative;
+}
+
+.product_image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product_rating button {
+  background-color: transparent;
+  border: none;
+}
+
+.card_info {
+  margin-top: 10px;
+}
+
+.common_cart {
+  background-color: #ff902b;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.common_cart:hover {
+  background-color: #e6811f;
+}
+.order_component {
+  padding-top: 6rem;
+  display: flex; 
+}

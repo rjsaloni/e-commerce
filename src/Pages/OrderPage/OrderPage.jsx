@@ -1,33 +1,36 @@
-import { useState } from "react";
+// src/pages/OrderPage.jsx
 import { CiShoppingCart } from "react-icons/ci";
 import { IoIosStar } from "react-icons/io";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";  
-import { useCart } from "../../context/CartContext";  
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext"; 
 
+import special1 from '../../assets/special/special_1.png';
+import special2 from '../../assets/special/special_2.png';
+import special3 from '../../assets/special/special_3.png';
+import special4 from '../../assets/special/special_4.png';
+import special5 from '../../assets/special/special_5.png';
+import special6 from '../../assets/special/special_6.png';
 import popular1 from '../../assets/popular/popular_1.png';
 import popular2 from '../../assets/popular/popular_2.png';
 import popular3 from '../../assets/popular/popular_3.png';
 
-const Popular = () => {
-  const { addToCart, increment, decrement, cartItems } = useCart(); 
-  const [variants, setVariants] = useState({});
+const OrderPage = () => {
   const navigate = useNavigate();
+  const { cartItems, addToCart, increment, decrement } = useCart(); 
 
-  const handleAddToCart = (id) => {
-    const item = popular.find(i => i.id === id);
+  const handleAddToCart = (item) => {
     addToCart(item);
-    navigate('/cart');  
+    navigate('/cart');
   };
 
-  const selectVariant = (id, type) => {
-    setVariants(prev => ({
-      ...prev,
-      [id]: type
-    }));
-  };
-
-  const popular = [
+  const specials = [
+    { id: 1, image: special1, title: 'Sandwich', description: 'Bread with meat and vegetables', price: 120, rating: '3.8' },
+    { id: 2, image: special2, title: 'Hot Milk', description: 'Hot milk with less sugar', price: 200, rating: '2.8' },
+    { id: 3, image: special3, title: 'Coffee Ice Cream', description: 'Coffee with vanilla ice cream', price: 230, rating: '4.8' },
+    { id: 4, image: special4, title: 'Cappuccino', description: 'Hot cappuccino', price: 120, rating: '3.8' },
+    { id: 5, image: special5, title: 'Moccacinno', description: 'Hot moccacinno', price: 200, rating: '2.8' },
+    { id: 6, image: special6, title: 'Waffle Ice Cream', description: 'Waffle with ice cream', price: 230, rating: '4.8' },
     {
       id: 1,
       image: popular1,
@@ -52,15 +55,12 @@ const Popular = () => {
   ];
 
   return (
-    <div className="popular_component">
+    <div className="order_component">
       <div className="container">
-        <div className="section_header mb-5">
-          <h2>Popular <span>now</span></h2>
-        </div>
-
-        <div className="popular_container">
-          <div className="row gy-5">
-            {popular.map(item => (
+        <div className="row gy-5">
+          {specials.map(item => {
+            const inCart = cartItems.find(ci => ci.id === item.id);
+            return (
               <div key={item.id} className="col-xl-4 col-lg-4 col-md-12">
                 <div className="popular_content">
                   <div className="popular_image position-relative">
@@ -73,51 +73,34 @@ const Popular = () => {
                   </div>
                   <div className="card_info d-flex align-items-center justify-content-between">
                     <h3>{item.title}</h3>
-                    <span>{item.price}</span>
+                    <span>{item.price} Rs</span>
                   </div>
-                  <div className="d-flex align-items-center justify-content-between mb-2">
-                    <div className="popular_variant d-flex align-items-center gap-3">
-                      <button
-                        className={`btn btn-sm ${variants[item.id] === 'hot' ? 'btn-orange' : 'btn-outline-orange'}`}
-                        onClick={() => selectVariant(item.id, 'hot')}
-                      >
-                        Hot
-                      </button>
-                      <button
-                        className={`btn btn-sm ${variants[item.id] === 'cold' ? 'btn-orange' : 'btn-outline-orange'}`}
-                        onClick={() => selectVariant(item.id, 'cold')}
-                      >
-                        Cold
-                      </button>
-                    </div>
-
-                    {cartItems.find(ci => ci.id === item.id) ? (
+                  <div className="d-flex align-items-center justify-content-between">
+                    <p>{item.description}</p>
+                    {inCart ? (
                       <div className="d-flex align-items-center gap-2">
                         <button className="btn btn-sm btn-outline-danger" onClick={() => decrement(item.id)}>
                           <FaMinus size={12} />
                         </button>
-                        <span>{cartItems.find(ci => ci.id === item.id).quantity}</span>
+                        <span>{inCart.quantity}</span>
                         <button className="btn btn-sm btn-outline-success" onClick={() => increment(item.id)}>
                           <FaPlus size={12} />
                         </button>
                       </div>
                     ) : (
-                      <button className="common_cart" onClick={() => handleAddToCart(item.id)}>
+                      <button className="common_cart" onClick={() => handleAddToCart(item)}>
                         <CiShoppingCart fontSize="1.5rem" color="#fff" />
                       </button>
                     )}
                   </div>
-                  {variants[item.id] && (
-                    <p className="mb-0"><small>Selected: {variants[item.id]}</small></p>
-                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-export default Popular;
+export default OrderPage;
